@@ -2,3 +2,11 @@ This document aims to instruct how to use new tree algorithms "EXICtree" in R pr
 A  R package"EXICtree" is created. "EXICtree" is implemented based on the "partykit" R package .
 Step 1) Activate "partykit" R package, ie. library(partykit).
 Step 2)Load "EXICtree_0.1.0.tar.gz" file to R ,library(EXICtree).
+Example
+library(partykit)
+library(interval)
+library(EXICtree)
+data(bcos)
+## Fit ICStree1 survival tree
+## make sure to attach survival package (by library(survival) ) before using Surv function
+tree <- ICStree1(Surv(left,right,type="interval2")~treatment, data = bcos,0.05,0.2)
