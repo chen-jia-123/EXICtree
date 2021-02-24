@@ -7,6 +7,4 @@ library(partykit)
 library(interval)
 library(EXICtree)
 data(bcos)
-## Fit ICStree1 survival tree
-## make sure to attach survival package (by library(survival) ) before using Surv function
 tree <- ICStree1(Surv(left,right,type="interval2")~treatment, data = bcos,0.05,0.2)
